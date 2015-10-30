@@ -1,0 +1,54 @@
+/* Add Some Style*/
+.description {
+
+	max-width: 705px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.screenshot {
+	max-width : 460px;
+}
+.app {
+    display: flex;
+}
+h1 {
+	text-align: center;
+	color: #294860;
+}
+/* change to a nicer font */
+body {padding: 20px 10px;
+	font-family: Helvetica;
+	max-width: 2000px;
+	margin: 0 auto; /* The 0 refers to the top and bottom margins and the "auto" automatically */
+	font-size: 1.2em;
+}
+
+	/* padding: 10px; */
+.lesson {
+	background-color: #0F7F9A;
+	border-radius: 20px;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+h3 {
+	margin: 5px;
+}
+.section {
+	background-color: #DFEAF1;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 10px;
+	color: black;
+}
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
