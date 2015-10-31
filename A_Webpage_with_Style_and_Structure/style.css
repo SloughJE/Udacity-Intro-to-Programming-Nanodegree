@@ -1,6 +1,5 @@
 /* Add Some Style*/
 .description {
-
 	max-width: 705px;
 }
 
@@ -17,21 +16,22 @@
 .app {
     display: flex;
 }
+
 h1 {
 	text-align: center;
 	color: #294860;
 }
-/* change to a nicer font */
-body {padding: 20px 10px;
+
+body {
+	padding: 20px 10px;
 	font-family: Helvetica;
 	max-width: 2000px;
 	margin: 0 auto; /* The 0 refers to the top and bottom margins and the "auto" automatically */
 	font-size: 1.2em;
 }
 
-	/* padding: 10px; */
 .lesson {
-	background-color: #0F7F9A;
+	background-color: #0f7f9a;
 	border-radius: 20px;
 	color: white;
 	padding: 10px;
@@ -41,14 +41,20 @@ body {padding: 20px 10px;
 h3 {
 	margin: 5px;
 }
+
 .section {
-	background-color: #DFEAF1;
+	background-color: #dfeaf1;
 	padding: 10px;
 	margin: 5px;
 	border-radius: 10px;
 	color: black;
 }
+
 .displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto }
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.clearfix {
+    overflow: auto;
+}
