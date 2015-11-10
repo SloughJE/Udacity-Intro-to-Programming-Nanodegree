@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Some of my Favorite Movies!</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #CAE1FF;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: #CAE1FF;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Some of my Favorite Movies, with descriptions and trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="xq1gXC3119A" data-toggle="modal" data-target="#trailer">
+    <img src="http://pxhst.co/avaxhome/2007-06-13/PDVD_042.jpg" width="220" height="342">
+    <h2>The Wind Will Carry Us</h2>
+    <h4>Director: Abbas Kiarostami</h4>
+    <h4>Year of release: 1999</h4>
+    <body>Prefer the present to these fine promises. Even a drum sounds melodious from afar.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="m1zYYWHFRNw" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Unbearable_lightness_of_being_poster.jpg" width="220" height="342">
+    <h2>The Unbearable Lightness of Being</h2>
+    <h4>Director: Philip Kaufman</h4>
+    <h4>Year of release: 1988</h4>
+    <body>During the Prague Spring, Tomas has a sophisticated lover, Sabina, but becomes smitten with a bookish country girl named Tereza, and the two begin a relationship.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="V75dMMIW2B4" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Fotrcd-cover.jpg" width="220" height="342">
+    <h2>The Fellowship of the Ring</h2>
+    <h4>Director: Peter Jackson</h4>
+    <h4>Year of release: 2001</h4>
+    <body>In a small village in the Shire a young Hobbit named Frodo (Elijah Wood) has been entrusted with an ancient Ring. Now he must embark on an epic quest to the Cracks of Doom in order to destroy it.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="MGoQb2N6dt0" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/8d/Sunshine_1999_poster.jpg" width="220" height="342">
+    <h2>Sonnenschein</h2>
+    <h4>Director: Istvan Szabo</h4>
+    <h4>Year of release: 1999</h4>
+    <body>The film follows a Jewish family living in Hungary through three generations, rising from humble beginnings to positions of wealth and power in the crumbling Austro-Hungarian Empire.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Igc0Jp62kEg" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Closelywatchedtrains.jpg/220px-Closelywatchedtrains.jpg" width="220" height="342">
+    <h2>Closely Watched Trains</h2>
+    <h4>Director: Jiri Menzel</h4>
+    <h4>Year of release: 1966</h4>
+    <body>At a village railway station in occupied Czechoslovakia, a bumbling dispatcher's apprentice longs to liberate himself from his virginity.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dddMp8iknTA" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/72/Where_the_green_ants_dream_DVD_cover.jpg" width="220" height="342">
+    <h2>Where the Green Ants Dream</h2>
+    <h4>Director: Werner Herzog</h4>
+    <h4>Year of release: 1984</h4>
+    <body>In the wilds of Australia, aboriginal tribe culture is threatened by a giant corporation that wants to mine in one of the holiest sites.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="F53yUsgVuL0" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Fitzcarraldo.jpg/220px-Fitzcarraldo.jpg" width="220" height="342">
+    <h2>Fitzcarraldo</h2>
+    <h4>Director: Werner Herzog</h4>
+    <h4>Year of release: 1982</h4>
+    <body>A would-be rubber baron Brian Sweeney Fitzgerald, an Irishman known in Peru as Fitzcarraldo, is determined to transport a steamship over a steep hill in order to access a rich rubber territory in the Amazon Basin.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UeYkplAeA1o" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Zelary.jpg" width="220" height="342">
+    <h2>Zelary</h2>
+    <h4>Director: Ondrej Trojan</h4>
+    <h4>Year of release: 2003</h4>
+    <body>A nurse and her surgeon-lover are part of a resistance movement in 1940s Czechoslovakia. When they are discovered, her lover flees and she must find a place to hide. A patient whose life she saved, a man from a remote mountain village where time stopped 150 years ago, agrees to hide her as his wife.</body>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="XDSQLTtGZE0" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Tasteofcherryposter.jpg" width="220" height="342">
+    <h2>Taste of Cherry</h2>
+    <h4>Director: Abbas Kiarostami</h4>
+    <h4>Year of release: 1997</h4>
+    <body>Mr. Badii (Homayoun Ershadi) drives around Tehran in hopes of finding someone willing to burry him after he commits suicide. He has little luck finding an accomplice willing to bury him, suicide is forbidden under Islamic law and this is what puts him in this desperate situation.</body>
+</div>
+
+    </div>
+  </body>
+</html>
